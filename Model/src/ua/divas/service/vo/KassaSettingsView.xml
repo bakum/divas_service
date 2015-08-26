@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="KassaSettingsView"
+  Version="12.1.2.66.68"
+  InheritPersonalization="merge"
+  SelectList="KassaSettings.ID, 
+       KassaSettings.USER_ID, 
+       KassaSettings.KASSA_ID"
+  FromList="KASSA_SETTINGS KassaSettings"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SdoGen="true"
+  SdoName="ua.divas.service.vo.common.KassaSettingsViewSDO"
+  SdoNameSpace="/ua/divas/service/vo/common/">
+  <EntityUsage
+    Name="KassaSettings"
+    Entity="ua.divas.service.model.KassaSettings"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="KassaSettings"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="UserId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserId"
+    EntityUsage="KassaSettings"
+    AliasName="USER_ID"/>
+  <ViewAttribute
+    Name="KassaId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="KassaId"
+    EntityUsage="KassaSettings"
+    AliasName="KASSA_ID"/>
+</ViewObject>
