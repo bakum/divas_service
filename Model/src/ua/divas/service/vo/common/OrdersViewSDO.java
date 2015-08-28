@@ -18,6 +18,10 @@ public interface OrdersViewSDO extends java.io.Serializable {
 
    public void setKontragId(java.lang.String value);
 
+   public java.lang.String getKontragName();
+
+   public void setKontragName(java.lang.String value);
+
    public java.lang.String getCurrId();
 
    public void setCurrId(java.lang.String value);
@@ -73,6 +77,10 @@ public interface OrdersViewSDO extends java.io.Serializable {
    public java.lang.String getZamerId();
 
    public void setZamerId(java.lang.String value);
+
+   public java.lang.String getZamerName();
+
+   public void setZamerName(java.lang.String value);
 
    public java.sql.Timestamp getDatZam();
 

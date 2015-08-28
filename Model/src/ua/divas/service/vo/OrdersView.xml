@@ -6,10 +6,20 @@
   Name="OrdersView"
   Version="12.1.2.66.68"
   InheritPersonalization="merge"
-  SelectList="Orders.ID, 
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  SdoGen="true"
+  SdoName="ua.divas.service.vo.common.OrdersViewSDO"
+  SdoNameSpace="/ua/divas/service/vo/common/">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <SQLQuery><![CDATA[SELECT Orders.ID, 
        Orders.DAT, 
        Orders.NUM, 
-       Orders.KONTRAG_ID, 
+       Orders.KONTRAG_ID,
+       (select fullname from kontragents where id = Orders.KONTRAG_ID) Kontrag_Name,
        Orders.CURR_ID, 
        Orders.KASSA_ID, 
        Orders.DIVISION_ID, 
@@ -23,21 +33,16 @@
        Orders.FIRM_ID, 
        Orders.ACTIVITIES_ID, 
        Orders.STATUS_ID, 
-       Orders.ZAMER_ID, 
+       Orders.ZAMER_ID,
+       (select fullname from kontragents where id = Orders.ZAMER_ID) Zamer_Name,
        Orders.DAT_ZAM, 
        Orders.TIME_ZAM, 
        Orders.SUMM_PLAN, 
        Orders.DAT_COMPLETE, 
        Orders.AGENT_ID, 
        Orders.DAT_COMPLETE_FACT, 
-       Orders.DIVISION_DEST"
-  FromList="ORDERS Orders"
-  BindingStyle="OracleName"
-  CustomQuery="false"
-  PageIterMode="Full"
-  SdoGen="true"
-  SdoName="ua.divas.service.vo.common.OrdersViewSDO"
-  SdoNameSpace="/ua/divas/service/vo/common/">
+       Orders.DIVISION_DEST
+FROM  ORDERS Orders]]></SQLQuery>
   <EntityUsage
     Name="Orders"
     Entity="ua.divas.service.model.Orders"/>
@@ -69,6 +74,21 @@
     EntityAttrName="KontragId"
     EntityUsage="Orders"
     AliasName="KONTRAG_ID"/>
+  <ViewAttribute
+    Name="KontragName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="KONTRAG_NAME"
+    Expression="KONTRAG_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
   <ViewAttribute
     Name="CurrId"
     IsNotNull="true"
@@ -165,6 +185,21 @@
     EntityAttrName="ZamerId"
     EntityUsage="Orders"
     AliasName="ZAMER_ID"/>
+  <ViewAttribute
+    Name="ZamerName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ZAMER_NAME"
+    Expression="ZAMER_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
   <ViewAttribute
     Name="DatZam"
     IsNotNull="true"
