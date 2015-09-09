@@ -6,17 +6,21 @@
   Name="OrderStatusView"
   Version="12.1.2.66.68"
   InheritPersonalization="merge"
-  SelectList="OrderStatus.ID, 
-       OrderStatus.VERSION, 
-       OrderStatus.NAME, 
-       OrderStatus.FULLNAME"
-  FromList="ORDER_STATUS OrderStatus"
   BindingStyle="OracleName"
-  CustomQuery="false"
+  CustomQuery="true"
   PageIterMode="Full"
   SdoGen="true"
   SdoName="ua.divas.service.vo.common.OrderStatusViewSDO"
   SdoNameSpace="/ua/divas/service/vo/common/">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <SQLQuery><![CDATA[SELECT OrderStatus.ID, 
+       OrderStatus.VERSION, 
+       OrderStatus.NAME, 
+       OrderStatus.FULLNAME
+FROM  ORDER_STATUS OrderStatus
+where OrderStatus.name in ('ВРасчете','Замер','Новый','НеОплачен','Контроль')]]></SQLQuery>
   <EntityUsage
     Name="OrderStatus"
     Entity="ua.divas.service.model.OrderStatus"/>

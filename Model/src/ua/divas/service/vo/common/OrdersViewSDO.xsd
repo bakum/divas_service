@@ -11,9 +11,7 @@
     <xsd:complexType name="OrdersViewSDO">
         <xsd:annotation>
             <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
-                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
-                    <attribute>Id</attribute>
-                </key>
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/"/>
             </xsd:appinfo>
         </xsd:annotation>
         <xsd:sequence>
@@ -25,7 +23,9 @@
             <xsd:element name="CurrId" type="xsd:string" minOccurs="0"/>
             <xsd:element name="KassaId" type="xsd:string" minOccurs="0"/>
             <xsd:element name="DivisionId" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="DivisionName" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="UserId" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="UserName" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="Kurs" type="xsd:decimal" minOccurs="0"/>
             <xsd:element name="Kratnost" type="xsd:long" minOccurs="0" sdoXML:dataType="sdoJava:LongObject"/>
             <xsd:element name="Discription" type="xsd:string" minOccurs="0" nillable="true"/>
@@ -35,6 +35,7 @@
             <xsd:element name="FirmId" type="xsd:string" minOccurs="0"/>
             <xsd:element name="ActivitiesId" type="xsd:string" minOccurs="0"/>
             <xsd:element name="StatusId" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="StatusName" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="ZamerId" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="ZamerName" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="DatZam" type="ns0:dateTime-Timestamp" minOccurs="0"/>

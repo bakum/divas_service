@@ -53,7 +53,6 @@ import ua.divas.service.vo.common.UsersViewSDO;
                     portName = "DivasServiceSoapHttpPort",
                     endpointInterface = "ua.divas.service.app.common.serviceinterface.DivasService")
 @Interceptors({ ServiceContextInterceptor.class })
-@PolicySet(references = { @PolicyReference(value = "oracle/wss_username_token_service_policy") })
 public class DivasServiceImpl extends ServiceImpl implements DivasService {
     private static boolean _isInited = false;
 

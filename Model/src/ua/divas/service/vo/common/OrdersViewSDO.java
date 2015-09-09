@@ -34,9 +34,17 @@ public interface OrdersViewSDO extends java.io.Serializable {
 
    public void setDivisionId(java.lang.String value);
 
+   public java.lang.String getDivisionName();
+
+   public void setDivisionName(java.lang.String value);
+
    public java.lang.String getUserId();
 
    public void setUserId(java.lang.String value);
+
+   public java.lang.String getUserName();
+
+   public void setUserName(java.lang.String value);
 
    public java.math.BigDecimal getKurs();
 
@@ -73,6 +81,10 @@ public interface OrdersViewSDO extends java.io.Serializable {
    public java.lang.String getStatusId();
 
    public void setStatusId(java.lang.String value);
+
+   public java.lang.String getStatusName();
+
+   public void setStatusName(java.lang.String value);
 
    public java.lang.String getZamerId();
 

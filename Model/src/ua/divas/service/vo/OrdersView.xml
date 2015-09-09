@@ -11,7 +11,8 @@
   PageIterMode="Full"
   SdoGen="true"
   SdoName="ua.divas.service.vo.common.OrdersViewSDO"
-  SdoNameSpace="/ua/divas/service/vo/common/">
+  SdoNameSpace="/ua/divas/service/vo/common/"
+  OrderBy="DAT DESC">
   <DesignTime>
     <Attr Name="_isExpertMode" Value="true"/>
   </DesignTime>
@@ -22,8 +23,10 @@
        (select fullname from kontragents where id = Orders.KONTRAG_ID) Kontrag_Name,
        Orders.CURR_ID, 
        Orders.KASSA_ID, 
-       Orders.DIVISION_ID, 
-       Orders.USER_ID, 
+       Orders.DIVISION_ID,
+       (select fullname from divisions where id = division_id) Division_Name,
+       Orders.USER_ID,
+       (select login from users where id = user_id) User_name,
        Orders.KURS, 
        Orders.KRATNOST, 
        Orders.DISCRIPTION, 
@@ -32,7 +35,8 @@
        Orders.POSTED, 
        Orders.FIRM_ID, 
        Orders.ACTIVITIES_ID, 
-       Orders.STATUS_ID, 
+       Orders.STATUS_ID,
+       (select fullname from order_status where id = Orders.STATUS_ID) Status_Name,
        Orders.ZAMER_ID,
        (select fullname from kontragents where id = Orders.ZAMER_ID) Zamer_Name,
        Orders.DAT_ZAM, 
@@ -42,7 +46,10 @@
        Orders.AGENT_ID, 
        Orders.DAT_COMPLETE_FACT, 
        Orders.DIVISION_DEST
-FROM  ORDERS Orders]]></SQLQuery>
+FROM  ORDERS Orders
+where posted = 1 and deleted = 0 and
+status_id in (select id from order_status
+where name in ('ВРасчете','Замер','Новый','НеОплачен','Контроль'))]]></SQLQuery>
   <EntityUsage
     Name="Orders"
     Entity="ua.divas.service.model.Orders"/>
@@ -111,12 +118,42 @@ FROM  ORDERS Orders]]></SQLQuery>
     EntityUsage="Orders"
     AliasName="DIVISION_ID"/>
   <ViewAttribute
+    Name="DivisionName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="DIVISION_NAME"
+    Expression="DIVISION_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
     Name="UserId"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="UserId"
     EntityUsage="Orders"
     AliasName="USER_ID"/>
+  <ViewAttribute
+    Name="UserName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="USER_NAME"
+    Expression="USER_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
   <ViewAttribute
     Name="Kurs"
     IsNotNull="true"
@@ -179,6 +216,21 @@ FROM  ORDERS Orders]]></SQLQuery>
     EntityAttrName="StatusId"
     EntityUsage="Orders"
     AliasName="STATUS_ID"/>
+  <ViewAttribute
+    Name="StatusName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="STATUS_NAME"
+    Expression="STATUS_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
   <ViewAttribute
     Name="ZamerId"
     PrecisionRule="true"
