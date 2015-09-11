@@ -229,6 +229,12 @@
   <ViewUsage
     Name="UserSettingsView9"
     ViewObjectName="ua.divas.service.vo.UserSettingsView"/>
+  <ViewUsage
+    Name="NomenklaturaView1"
+    ViewObjectName="ua.divas.service.vo.NomenklaturaView"/>
+  <ViewUsage
+    Name="NomGroup1"
+    ViewObjectName="ua.divas.service.vo.NomGroup"/>
   <ViewLinkUsage
     Name="DivisionsDivisionsFk1Link1"
     ViewLinkObjectName="ua.divas.service.vo.DivisionsDivisionsFk1Link"
@@ -728,6 +734,24 @@
     <DesignTime>
       <Attr Name="_GetOpName" Value="getUsersView1"/>
       <Attr Name="_FindOpName" Value="findUsersView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="GroupmembersView1">
+    <DesignTime>
+      <Attr Name="_FindOpName" Value="findGroupmembersView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="NomenklaturaView1">
+    <DesignTime>
+      <Attr Name="_FindOpName" Value="findNomenklaturaView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="NomGroup1">
+    <DesignTime>
+      <Attr Name="_FindOpName" Value="findNomGroup1"/>
     </DesignTime>
   </ServiceViewUsage>
 </AppModule>

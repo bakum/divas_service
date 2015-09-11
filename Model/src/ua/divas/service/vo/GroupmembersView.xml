@@ -12,7 +12,10 @@
   FromList="GROUPMEMBERS Groupmembers"
   BindingStyle="OracleName"
   CustomQuery="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SdoGen="true"
+  SdoName="ua.divas.service.vo.common.GroupmembersViewSDO"
+  SdoNameSpace="/ua/divas/service/vo/common/">
   <EntityUsage
     Name="Groupmembers"
     Entity="ua.divas.service.model.Groupmembers"/>

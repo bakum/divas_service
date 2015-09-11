@@ -14,6 +14,10 @@ public interface KassaSettingsViewSDO extends java.io.Serializable {
 
    public void setKassaId(java.lang.String value);
 
+   public java.lang.String getKassaName();
+
+   public void setKassaName(java.lang.String value);
+
 
 }
 

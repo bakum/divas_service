@@ -7,7 +7,7 @@ public class KassaSettingsViewSDOImpl extends SDODataObject implements KassaSett
 
    public static final int START_PROPERTY_INDEX = 0;
 
-   public static final int END_PROPERTY_INDEX = START_PROPERTY_INDEX + 2;
+   public static final int END_PROPERTY_INDEX = START_PROPERTY_INDEX + 3;
 
    public KassaSettingsViewSDOImpl() {}
 
@@ -33,6 +33,14 @@ public class KassaSettingsViewSDOImpl extends SDODataObject implements KassaSett
 
    public void setKassaId(java.lang.String value) {
       set(START_PROPERTY_INDEX + 2 , value);
+   }
+
+   public java.lang.String getKassaName() {
+      return getString(START_PROPERTY_INDEX + 3);
+   }
+
+   public void setKassaName(java.lang.String value) {
+      set(START_PROPERTY_INDEX + 3 , value);
    }
 
 

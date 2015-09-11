@@ -7,10 +7,12 @@
     <import namespace="/ua/divas/service/vo/common/" schemaLocation="../../../vo/common/FirmsViewSDO.xsd"/>
     <import namespace="/ua/divas/service/vo/common/" schemaLocation="../../../vo/common/KassaViewSDO.xsd"/>
     <import namespace="/ua/divas/service/vo/common/" schemaLocation="../../../vo/common/OrdersTpUslugiViewSDO.xsd"/>
+    <import namespace="/ua/divas/service/vo/common/" schemaLocation="../../../vo/common/NomenklaturaViewSDO.xsd"/>
     <import namespace="/ua/divas/service/vo/common/" schemaLocation="../../../vo/common/MeasureUnitViewSDO.xsd"/>
     <import namespace="/ua/divas/service/vo/common/" schemaLocation="../../../vo/common/UserSettingsViewSDO.xsd"/>
     <import namespace="/ua/divas/service/vo/common/" schemaLocation="../../../vo/common/OrdersViewSDO.xsd"/>
     <import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="classpath:/META-INF/wsdl/BC4JService.xsd"/>
+    <import namespace="/ua/divas/service/vo/common/" schemaLocation="../../../vo/common/NomGroupSDO.xsd"/>
     <import namespace="/ua/divas/service/vo/common/" schemaLocation="../../../vo/common/OrdersTpOplatyViewSDO.xsd"/>
     <import namespace="/ua/divas/service/vo/common/" schemaLocation="../../../vo/common/OperationRkoViewSDO.xsd"/>
     <import namespace="/ua/divas/service/vo/common/" schemaLocation="../../../vo/common/RkoViewSDO.xsd"/>
@@ -18,6 +20,7 @@
     <import namespace="/ua/divas/service/vo/common/" schemaLocation="../../../vo/common/DivisionsViewSDO.xsd"/>
     <import namespace="/ua/divas/service/vo/common/" schemaLocation="../../../vo/common/CurrencyViewSDO.xsd"/>
     <import namespace="/ua/divas/service/vo/common/" schemaLocation="../../../vo/common/UsersViewSDO.xsd"/>
+    <import namespace="/ua/divas/service/vo/common/" schemaLocation="../../../vo/common/GroupmembersViewSDO.xsd"/>
     <import namespace="/ua/divas/service/vo/common/" schemaLocation="../../../vo/common/OrderStatusViewSDO.xsd"/>
     <import namespace="/ua/divas/service/vo/common/" schemaLocation="../../../vo/common/KassaSettingsViewSDO.xsd"/>
     <import namespace="/ua/divas/service/vo/common/" schemaLocation="../../../vo/common/ContactDetailsViewSDO.xsd"/>
@@ -178,20 +181,6 @@
         <complexType>
             <sequence>
                 <element name="result" type="ns0:FirmsViewSDO" minOccurs="0" maxOccurs="unbounded"/>
-            </sequence>
-        </complexType>
-    </element>
-    <element name="getKassaSettingsView1">
-        <complexType>
-            <sequence>
-                <element name="id" type="string"/>
-            </sequence>
-        </complexType>
-    </element>
-    <element name="getKassaSettingsView1Response">
-        <complexType>
-            <sequence>
-                <element name="result" type="ns0:KassaSettingsViewSDO"/>
             </sequence>
         </complexType>
     </element>
@@ -398,20 +387,6 @@
             </sequence>
         </complexType>
     </element>
-    <element name="getOrderStatusView1">
-        <complexType>
-            <sequence>
-                <element name="id" type="string"/>
-            </sequence>
-        </complexType>
-    </element>
-    <element name="getOrderStatusView1Response">
-        <complexType>
-            <sequence>
-                <element name="result" type="ns0:OrderStatusViewSDO"/>
-            </sequence>
-        </complexType>
-    </element>
     <element name="findOrderStatusView1">
         <complexType>
             <sequence>
@@ -590,20 +565,6 @@
         <complexType>
             <sequence>
                 <element name="result" type="ns0:OrdersTpUslugiViewSDO" minOccurs="0" maxOccurs="unbounded"/>
-            </sequence>
-        </complexType>
-    </element>
-    <element name="getOrdersView1">
-        <complexType>
-            <sequence>
-                <element name="id" type="string"/>
-            </sequence>
-        </complexType>
-    </element>
-    <element name="getOrdersView1Response">
-        <complexType>
-            <sequence>
-                <element name="result" type="ns0:OrdersViewSDO"/>
             </sequence>
         </complexType>
     </element>
@@ -871,6 +832,87 @@
         <complexType>
             <sequence>
                 <element name="result" type="ns0:UsersViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findGroupmembersView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns1:FindCriteria"/>
+                <element name="findControl" type="ns1:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findGroupmembersView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:GroupmembersViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getKassaSettingsView1">
+        <complexType>
+            <sequence/>
+        </complexType>
+    </element>
+    <element name="getKassaSettingsView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:KassaSettingsViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findNomenklaturaView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns1:FindCriteria"/>
+                <element name="findControl" type="ns1:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findNomenklaturaView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:NomenklaturaViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrderStatusView1">
+        <complexType>
+            <sequence/>
+        </complexType>
+    </element>
+    <element name="getOrderStatusView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:OrderStatusViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrdersView1">
+        <complexType>
+            <sequence/>
+        </complexType>
+    </element>
+    <element name="getOrdersView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:OrdersViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findNomGroup1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns1:FindCriteria"/>
+                <element name="findControl" type="ns1:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findNomGroup1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:NomGroupSDO" minOccurs="0" maxOccurs="unbounded"/>
             </sequence>
         </complexType>
     </element>

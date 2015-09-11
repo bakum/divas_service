@@ -6,16 +6,20 @@
   Name="KassaSettingsView"
   Version="12.1.2.66.68"
   InheritPersonalization="merge"
-  SelectList="KassaSettings.ID, 
-       KassaSettings.USER_ID, 
-       KassaSettings.KASSA_ID"
-  FromList="KASSA_SETTINGS KassaSettings"
   BindingStyle="OracleName"
-  CustomQuery="false"
+  CustomQuery="true"
   PageIterMode="Full"
   SdoGen="true"
   SdoName="ua.divas.service.vo.common.KassaSettingsViewSDO"
   SdoNameSpace="/ua/divas/service/vo/common/">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <SQLQuery><![CDATA[SELECT KassaSettings.ID, 
+       KassaSettings.USER_ID, 
+       KassaSettings.KASSA_ID,
+       (select fullname from kassa where id = KassaSettings.KASSA_ID) Kassa_Name
+FROM  KASSA_SETTINGS KassaSettings]]></SQLQuery>
   <EntityUsage
     Name="KassaSettings"
     Entity="ua.divas.service.model.KassaSettings"/>
@@ -40,4 +44,19 @@
     EntityAttrName="KassaId"
     EntityUsage="KassaSettings"
     AliasName="KASSA_ID"/>
+  <ViewAttribute
+    Name="KassaName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="KASSA_NAME"
+    Expression="KASSA_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
 </ViewObject>
