@@ -97,12 +97,6 @@
     <wsdl:message name="DivasService_findKassaView1Response">
         <wsdl:part name="parameters" element="types:findKassaView1Response"/>
     </wsdl:message>
-    <wsdl:message name="DivasService_getKontragentsView1">
-        <wsdl:part name="parameters" element="types:getKontragentsView1"/>
-    </wsdl:message>
-    <wsdl:message name="DivasService_getKontragentsView1Response">
-        <wsdl:part name="parameters" element="types:getKontragentsView1Response"/>
-    </wsdl:message>
     <wsdl:message name="DivasService_updateKontragentsView1">
         <wsdl:part name="parameters" element="types:updateKontragentsView1"/>
     </wsdl:message>
@@ -343,12 +337,6 @@
     <wsdl:message name="DivasService_findUserSettingsView1Response">
         <wsdl:part name="parameters" element="types:findUserSettingsView1Response"/>
     </wsdl:message>
-    <wsdl:message name="DivasService_getUsersView1">
-        <wsdl:part name="parameters" element="types:getUsersView1"/>
-    </wsdl:message>
-    <wsdl:message name="DivasService_getUsersView1Response">
-        <wsdl:part name="parameters" element="types:getUsersView1Response"/>
-    </wsdl:message>
     <wsdl:message name="DivasService_findUsersView1">
         <wsdl:part name="parameters" element="types:findUsersView1"/>
     </wsdl:message>
@@ -379,17 +367,35 @@
     <wsdl:message name="DivasService_getOrderStatusView1Response">
         <wsdl:part name="parameters" element="types:getOrderStatusView1Response"/>
     </wsdl:message>
+    <wsdl:message name="DivasService_findNomGroup1">
+        <wsdl:part name="parameters" element="types:findNomGroup1"/>
+    </wsdl:message>
+    <wsdl:message name="DivasService_findNomGroup1Response">
+        <wsdl:part name="parameters" element="types:findNomGroup1Response"/>
+    </wsdl:message>
+    <wsdl:message name="DivasService_getKontragentsView1">
+        <wsdl:part name="parameters" element="types:getKontragentsView1"/>
+    </wsdl:message>
+    <wsdl:message name="DivasService_getKontragentsView1Response">
+        <wsdl:part name="parameters" element="types:getKontragentsView1Response"/>
+    </wsdl:message>
     <wsdl:message name="DivasService_getOrdersView1">
         <wsdl:part name="parameters" element="types:getOrdersView1"/>
     </wsdl:message>
     <wsdl:message name="DivasService_getOrdersView1Response">
         <wsdl:part name="parameters" element="types:getOrdersView1Response"/>
     </wsdl:message>
-    <wsdl:message name="DivasService_findNomGroup1">
-        <wsdl:part name="parameters" element="types:findNomGroup1"/>
+    <wsdl:message name="DivasService_createOrdersView1">
+        <wsdl:part name="parameters" element="types:createOrdersView1"/>
     </wsdl:message>
-    <wsdl:message name="DivasService_findNomGroup1Response">
-        <wsdl:part name="parameters" element="types:findNomGroup1Response"/>
+    <wsdl:message name="DivasService_createOrdersView1Response">
+        <wsdl:part name="parameters" element="types:createOrdersView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="DivasService_getUsersView1">
+        <wsdl:part name="parameters" element="types:getUsersView1"/>
+    </wsdl:message>
+    <wsdl:message name="DivasService_getUsersView1Response">
+        <wsdl:part name="parameters" element="types:getUsersView1Response"/>
     </wsdl:message>
     <wsdl:portType name="DivasService">
         <wsdl:documentation>
@@ -448,8 +454,8 @@
                  DeleteOpName="deleteOrdersTpUslugiView1" MergeOpName="mergeOrdersTpUslugiView1"
                  GetOpName="getOrdersTpUslugiView1" FindOpName="findOrdersTpUslugiView1"/>
             <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="OrdersView1" xmlns:ns0="/ua/divas/service/vo/common/"
-                 SDOName="ns0:OrdersViewSDO" UpdateOpName="updateOrdersView1" MergeOpName="mergeOrdersView1"
-                 GetOpName="getOrdersView1" FindOpName="findOrdersView1"/>
+                 SDOName="ns0:OrdersViewSDO" CreateOpName="createOrdersView1" UpdateOpName="updateOrdersView1"
+                 MergeOpName="mergeOrdersView1" GetOpName="getOrdersView1" FindOpName="findOrdersView1"/>
             <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="PkoView1" xmlns:ns0="/ua/divas/service/vo/common/"
                  SDOName="ns0:PkoViewSDO" CreateOpName="createPkoView1" UpdateOpName="updatePkoView1"
                  DeleteOpName="deletePkoView1" MergeOpName="mergePkoView1" GetOpName="getPkoView1"
@@ -532,11 +538,6 @@
         <wsdl:operation name="findKassaView1">
             <wsdl:input message="tns:DivasService_findKassaView1"/>
             <wsdl:output message="tns:DivasService_findKassaView1Response"/>
-            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
-        </wsdl:operation>
-        <wsdl:operation name="getKontragentsView1">
-            <wsdl:input message="tns:DivasService_getKontragentsView1"/>
-            <wsdl:output message="tns:DivasService_getKontragentsView1Response"/>
             <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
         </wsdl:operation>
         <wsdl:operation name="updateKontragentsView1">
@@ -739,11 +740,6 @@
             <wsdl:output message="tns:DivasService_findUserSettingsView1Response"/>
             <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
         </wsdl:operation>
-        <wsdl:operation name="getUsersView1">
-            <wsdl:input message="tns:DivasService_getUsersView1"/>
-            <wsdl:output message="tns:DivasService_getUsersView1Response"/>
-            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
-        </wsdl:operation>
         <wsdl:operation name="findUsersView1">
             <wsdl:input message="tns:DivasService_findUsersView1"/>
             <wsdl:output message="tns:DivasService_findUsersView1Response"/>
@@ -769,14 +765,29 @@
             <wsdl:output message="tns:DivasService_getOrderStatusView1Response"/>
             <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
         </wsdl:operation>
+        <wsdl:operation name="findNomGroup1">
+            <wsdl:input message="tns:DivasService_findNomGroup1"/>
+            <wsdl:output message="tns:DivasService_findNomGroup1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getKontragentsView1">
+            <wsdl:input message="tns:DivasService_getKontragentsView1"/>
+            <wsdl:output message="tns:DivasService_getKontragentsView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
         <wsdl:operation name="getOrdersView1">
             <wsdl:input message="tns:DivasService_getOrdersView1"/>
             <wsdl:output message="tns:DivasService_getOrdersView1Response"/>
             <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
         </wsdl:operation>
-        <wsdl:operation name="findNomGroup1">
-            <wsdl:input message="tns:DivasService_findNomGroup1"/>
-            <wsdl:output message="tns:DivasService_findNomGroup1Response"/>
+        <wsdl:operation name="createOrdersView1">
+            <wsdl:input message="tns:DivasService_createOrdersView1"/>
+            <wsdl:output message="tns:DivasService_createOrdersView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getUsersView1">
+            <wsdl:input message="tns:DivasService_getUsersView1"/>
+            <wsdl:output message="tns:DivasService_getUsersView1Response"/>
             <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
         </wsdl:operation>
     </wsdl:portType>
@@ -940,18 +951,6 @@
         </wsdl:operation>
         <wsdl:operation name="findKassaView1">
             <soap:operation soapAction="/ua/divas/service/app/common/findKassaView1"/>
-            <wsdl:input>
-                <soap:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output>
-                <soap:body use="literal"/>
-            </wsdl:output>
-            <wsdl:fault name="ServiceException">
-                <soap:fault name="ServiceException" use="literal"/>
-            </wsdl:fault>
-        </wsdl:operation>
-        <wsdl:operation name="getKontragentsView1">
-            <soap:operation soapAction="/ua/divas/service/app/common/getKontragentsView1"/>
             <wsdl:input>
                 <soap:body use="literal"/>
             </wsdl:input>
@@ -1442,18 +1441,6 @@
                 <soap:fault name="ServiceException" use="literal"/>
             </wsdl:fault>
         </wsdl:operation>
-        <wsdl:operation name="getUsersView1">
-            <soap:operation soapAction="/ua/divas/service/app/common/getUsersView1"/>
-            <wsdl:input>
-                <soap:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output>
-                <soap:body use="literal"/>
-            </wsdl:output>
-            <wsdl:fault name="ServiceException">
-                <soap:fault name="ServiceException" use="literal"/>
-            </wsdl:fault>
-        </wsdl:operation>
         <wsdl:operation name="findUsersView1">
             <soap:operation soapAction="/ua/divas/service/app/common/findUsersView1"/>
             <wsdl:input>
@@ -1514,6 +1501,30 @@
                 <soap:fault name="ServiceException" use="literal"/>
             </wsdl:fault>
         </wsdl:operation>
+        <wsdl:operation name="findNomGroup1">
+            <soap:operation soapAction="/ua/divas/service/app/common/findNomGroup1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getKontragentsView1">
+            <soap:operation soapAction="/ua/divas/service/app/common/getKontragentsView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
         <wsdl:operation name="getOrdersView1">
             <soap:operation soapAction="/ua/divas/service/app/common/getOrdersView1"/>
             <wsdl:input>
@@ -1526,8 +1537,20 @@
                 <soap:fault name="ServiceException" use="literal"/>
             </wsdl:fault>
         </wsdl:operation>
-        <wsdl:operation name="findNomGroup1">
-            <soap:operation soapAction="/ua/divas/service/app/common/findNomGroup1"/>
+        <wsdl:operation name="createOrdersView1">
+            <soap:operation soapAction="/ua/divas/service/app/common/createOrdersView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getUsersView1">
+            <soap:operation soapAction="/ua/divas/service/app/common/getUsersView1"/>
             <wsdl:input>
                 <soap:body use="literal"/>
             </wsdl:input>

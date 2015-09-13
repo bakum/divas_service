@@ -228,20 +228,6 @@
             </sequence>
         </complexType>
     </element>
-    <element name="getKontragentsView1">
-        <complexType>
-            <sequence>
-                <element name="id" type="string"/>
-            </sequence>
-        </complexType>
-    </element>
-    <element name="getKontragentsView1Response">
-        <complexType>
-            <sequence>
-                <element name="result" type="ns0:KontragentsViewSDO"/>
-            </sequence>
-        </complexType>
-    </element>
     <element name="updateKontragentsView1">
         <complexType>
             <sequence>
@@ -806,20 +792,6 @@
             </sequence>
         </complexType>
     </element>
-    <element name="getUsersView1">
-        <complexType>
-            <sequence>
-                <element name="id" type="string"/>
-            </sequence>
-        </complexType>
-    </element>
-    <element name="getUsersView1Response">
-        <complexType>
-            <sequence>
-                <element name="result" type="ns0:UsersViewSDO"/>
-            </sequence>
-        </complexType>
-    </element>
     <element name="findUsersView1">
         <complexType>
             <sequence>
@@ -889,18 +861,6 @@
             </sequence>
         </complexType>
     </element>
-    <element name="getOrdersView1">
-        <complexType>
-            <sequence/>
-        </complexType>
-    </element>
-    <element name="getOrdersView1Response">
-        <complexType>
-            <sequence>
-                <element name="result" type="ns0:OrdersViewSDO"/>
-            </sequence>
-        </complexType>
-    </element>
     <element name="findNomGroup1">
         <complexType>
             <sequence>
@@ -913,6 +873,58 @@
         <complexType>
             <sequence>
                 <element name="result" type="ns0:NomGroupSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getKontragentsView1">
+        <complexType>
+            <sequence/>
+        </complexType>
+    </element>
+    <element name="getKontragentsView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:KontragentsViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrdersView1">
+        <complexType>
+            <sequence>
+                <element name="id" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOrdersView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:OrdersViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createOrdersView1">
+        <complexType>
+            <sequence>
+                <element name="ordersView1" type="ns0:OrdersViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createOrdersView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:OrdersViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getUsersView1">
+        <complexType>
+            <sequence/>
+        </complexType>
+    </element>
+    <element name="getUsersView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:UsersViewSDO"/>
             </sequence>
         </complexType>
     </element>

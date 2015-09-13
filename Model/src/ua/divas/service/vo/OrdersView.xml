@@ -11,8 +11,7 @@
   PageIterMode="Full"
   SdoGen="true"
   SdoName="ua.divas.service.vo.common.OrdersViewSDO"
-  SdoNameSpace="/ua/divas/service/vo/common/"
-  OrderBy="DAT DESC">
+  SdoNameSpace="/ua/divas/service/vo/common/" OrderBy="DAT DESC">
   <DesignTime>
     <Attr Name="_isExpertMode" Value="true"/>
   </DesignTime>

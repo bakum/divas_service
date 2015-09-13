@@ -169,12 +169,6 @@ public interface DivasService {
                                       @WebParam(mode = WebParam.Mode.IN, name = "findControl")
                                       FindControl findControl) throws ServiceException;
 
-    @WebMethod(action = "/ua/divas/service/app/common/getKontragentsView1", operationName = "getKontragentsView1")
-    @RequestWrapper(targetNamespace = "/ua/divas/service/app/common/types/", localName = "getKontragentsView1")
-    @ResponseWrapper(targetNamespace = "/ua/divas/service/app/common/types/", localName = "getKontragentsView1Response")
-    @WebResult(name = "result")
-    KontragentsViewSDO getKontragentsView1(@WebParam(mode = WebParam.Mode.IN, name = "id")
-                                           String id) throws ServiceException;
 
     @WebMethod(action = "/ua/divas/service/app/common/updateKontragentsView1", operationName = "updateKontragentsView1")
     @RequestWrapper(targetNamespace = "/ua/divas/service/app/common/types/", localName = "updateKontragentsView1")
@@ -510,11 +504,6 @@ public interface DivasService {
                                                     @WebParam(mode = WebParam.Mode.IN, name = "findControl")
                                                     FindControl findControl) throws ServiceException;
 
-    @WebMethod(action = "/ua/divas/service/app/common/getUsersView1", operationName = "getUsersView1")
-    @RequestWrapper(targetNamespace = "/ua/divas/service/app/common/types/", localName = "getUsersView1")
-    @ResponseWrapper(targetNamespace = "/ua/divas/service/app/common/types/", localName = "getUsersView1Response")
-    @WebResult(name = "result")
-    UsersViewSDO getUsersView1(@WebParam(mode = WebParam.Mode.IN, name = "id") String id) throws ServiceException;
 
     @WebMethod(action = "/ua/divas/service/app/common/findUsersView1", operationName = "findUsersView1")
     @RequestWrapper(targetNamespace = "/ua/divas/service/app/common/types/", localName = "findUsersView1")
@@ -558,11 +547,6 @@ public interface DivasService {
     @WebResult(name = "result")
     OrderStatusViewSDO getOrderStatusView1() throws ServiceException;
 
-    @WebMethod(action = "/ua/divas/service/app/common/getOrdersView1", operationName = "getOrdersView1")
-    @RequestWrapper(targetNamespace = "/ua/divas/service/app/common/types/", localName = "getOrdersView1")
-    @ResponseWrapper(targetNamespace = "/ua/divas/service/app/common/types/", localName = "getOrdersView1Response")
-    @WebResult(name = "result")
-    OrdersViewSDO getOrdersView1() throws ServiceException;
 
     @WebMethod(action = "/ua/divas/service/app/common/findNomGroup1", operationName = "findNomGroup1")
     @RequestWrapper(targetNamespace = "/ua/divas/service/app/common/types/", localName = "findNomGroup1")
@@ -571,5 +555,30 @@ public interface DivasService {
     List<NomGroupSDO> findNomGroup1(@WebParam(mode = WebParam.Mode.IN, name = "findCriteria") FindCriteria findCriteria,
                                     @WebParam(mode = WebParam.Mode.IN, name = "findControl")
                                     FindControl findControl) throws ServiceException;
+
+    @WebMethod(action = "/ua/divas/service/app/common/getKontragentsView1", operationName = "getKontragentsView1")
+    @RequestWrapper(targetNamespace = "/ua/divas/service/app/common/types/", localName = "getKontragentsView1")
+    @ResponseWrapper(targetNamespace = "/ua/divas/service/app/common/types/", localName = "getKontragentsView1Response")
+    @WebResult(name = "result")
+    KontragentsViewSDO getKontragentsView1() throws ServiceException;
+
+    @WebMethod(action = "/ua/divas/service/app/common/getOrdersView1", operationName = "getOrdersView1")
+    @RequestWrapper(targetNamespace = "/ua/divas/service/app/common/types/", localName = "getOrdersView1")
+    @ResponseWrapper(targetNamespace = "/ua/divas/service/app/common/types/", localName = "getOrdersView1Response")
+    @WebResult(name = "result")
+    OrdersViewSDO getOrdersView1(@WebParam(mode = WebParam.Mode.IN, name = "id") String id) throws ServiceException;
+
+    @WebMethod(action = "/ua/divas/service/app/common/createOrdersView1", operationName = "createOrdersView1")
+    @RequestWrapper(targetNamespace = "/ua/divas/service/app/common/types/", localName = "createOrdersView1")
+    @ResponseWrapper(targetNamespace = "/ua/divas/service/app/common/types/", localName = "createOrdersView1Response")
+    @WebResult(name = "result")
+    OrdersViewSDO createOrdersView1(@WebParam(mode = WebParam.Mode.IN, name = "ordersView1")
+                                    OrdersViewSDO ordersView1) throws ServiceException;
+
+    @WebMethod(action = "/ua/divas/service/app/common/getUsersView1", operationName = "getUsersView1")
+    @RequestWrapper(targetNamespace = "/ua/divas/service/app/common/types/", localName = "getUsersView1")
+    @ResponseWrapper(targetNamespace = "/ua/divas/service/app/common/types/", localName = "getUsersView1Response")
+    @WebResult(name = "result")
+    UsersViewSDO getUsersView1() throws ServiceException;
 }
 

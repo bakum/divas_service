@@ -684,12 +684,14 @@
   <ServiceViewUsage
     ViewUsageName="OrdersView1"
     CanUpdate="true"
-    CanMerge="true">
+    CanMerge="true"
+    CanCreate="true">
     <DesignTime>
       <Attr Name="_GetOpName" Value="getOrdersView1"/>
       <Attr Name="_MergeOpName" Value="mergeOrdersView1"/>
       <Attr Name="_FindOpName" Value="findOrdersView1"/>
       <Attr Name="_UpdateOpName" Value="updateOrdersView1"/>
+      <Attr Name="_CreateOpName" Value="createOrdersView1"/>
     </DesignTime>
   </ServiceViewUsage>
   <ServiceViewUsage

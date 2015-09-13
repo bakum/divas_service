@@ -198,12 +198,6 @@ public class DivasServiceImpl extends ServiceImpl implements DivasService {
         return (List<KassaViewSDO>) find(findCriteria, findControl, "KassaView1", KassaViewSDO.class);
     }
 
-    /**
-     * getKontragentsView1: generated method. Do not modify.
-     */
-    public KontragentsViewSDO getKontragentsView1(String id) throws ServiceException {
-        return (KontragentsViewSDO) get(new Object[] { id }, "KontragentsView1", KontragentsViewSDO.class);
-    }
 
     /**
      * updateKontragentsView1: generated method. Do not modify.
@@ -508,12 +502,6 @@ public class DivasServiceImpl extends ServiceImpl implements DivasService {
                                                 UserSettingsViewSDO.class);
     }
 
-    /**
-     * getUsersView1: generated method. Do not modify.
-     */
-    public UsersViewSDO getUsersView1(String id) throws ServiceException {
-        return (UsersViewSDO) get(new Object[] { id }, "UsersView1", UsersViewSDO.class);
-    }
 
     /**
      * findUsersView1: generated method. Do not modify.
@@ -555,18 +543,40 @@ public class DivasServiceImpl extends ServiceImpl implements DivasService {
         return (OrderStatusViewSDO) get(new Object[] { }, "OrderStatusView1", OrderStatusViewSDO.class);
     }
 
-    /**
-     * getOrdersView1: generated method. Do not modify.
-     */
-    public OrdersViewSDO getOrdersView1() throws ServiceException {
-        return (OrdersViewSDO) get(new Object[] { }, "OrdersView1", OrdersViewSDO.class);
-    }
 
     /**
      * findNomGroup1: generated method. Do not modify.
      */
     public List<NomGroupSDO> findNomGroup1(FindCriteria findCriteria, FindControl findControl) throws ServiceException {
         return (List<NomGroupSDO>) find(findCriteria, findControl, "NomGroup1", NomGroupSDO.class);
+    }
+
+    /**
+     * getKontragentsView1: generated method. Do not modify.
+     */
+    public KontragentsViewSDO getKontragentsView1() throws ServiceException {
+        return (KontragentsViewSDO) get(new Object[] { }, "KontragentsView1", KontragentsViewSDO.class);
+    }
+
+    /**
+     * getOrdersView1: generated method. Do not modify.
+     */
+    public OrdersViewSDO getOrdersView1(String id) throws ServiceException {
+        return (OrdersViewSDO) get(new Object[] { id }, "OrdersView1", OrdersViewSDO.class);
+    }
+
+    /**
+     * createOrdersView1: generated method. Do not modify.
+     */
+    public OrdersViewSDO createOrdersView1(OrdersViewSDO ordersView1) throws ServiceException {
+        return (OrdersViewSDO) create(ordersView1, "OrdersView1");
+    }
+
+    /**
+     * getUsersView1: generated method. Do not modify.
+     */
+    public UsersViewSDO getUsersView1() throws ServiceException {
+        return (UsersViewSDO) get(new Object[] { }, "UsersView1", UsersViewSDO.class);
     }
 }
 
