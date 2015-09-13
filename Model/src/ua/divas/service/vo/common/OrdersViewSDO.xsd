@@ -38,6 +38,8 @@
             <xsd:element name="StatusName" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="ZamerId" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="ZamerName" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="ZamerUserName" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="ZamerUserId" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="DatZam" type="ns0:dateTime-Timestamp" minOccurs="0"/>
             <xsd:element name="TimeZam" type="xsd:string" minOccurs="0"/>
             <xsd:element name="SummPlan" type="xsd:decimal" minOccurs="0"/>

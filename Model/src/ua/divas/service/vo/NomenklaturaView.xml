@@ -11,7 +11,8 @@
   PageIterMode="Full"
   SdoGen="true"
   SdoName="ua.divas.service.vo.common.NomenklaturaViewSDO"
-  SdoNameSpace="/ua/divas/service/vo/common/">
+  SdoNameSpace="/ua/divas/service/vo/common/"
+  OrderBy="FULLNAME">
   <DesignTime>
     <Attr Name="_isExpertMode" Value="true"/>
   </DesignTime>

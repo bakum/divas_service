@@ -6,7 +6,16 @@
   Name="KontragentsView"
   Version="12.1.2.66.68"
   InheritPersonalization="merge"
-  SelectList="Kontragents.ID, 
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  SdoGen="true"
+  SdoName="ua.divas.service.vo.common.KontragentsViewSDO"
+  SdoNameSpace="/ua/divas/service/vo/common/">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <SQLQuery><![CDATA[SELECT Kontragents.ID, 
        Kontragents.IS_GROUP, 
        Kontragents.PARENT_ID, 
        Kontragents.FULLNAME, 
@@ -22,14 +31,9 @@
        Kontragents.IS_BUYER, 
        Kontragents.IS_MEASURER, 
        Kontragents.USER_ID, 
-       Kontragents.PHOTO"
-  FromList="KONTRAGENTS Kontragents"
-  BindingStyle="OracleName"
-  CustomQuery="false"
-  PageIterMode="Full"
-  SdoGen="true"
-  SdoName="ua.divas.service.vo.common.KontragentsViewSDO"
-  SdoNameSpace="/ua/divas/service/vo/common/">
+       Kontragents.PHOTO
+FROM  KONTRAGENTS Kontragents
+where is_group = 0]]></SQLQuery>
   <EntityUsage
     Name="Kontragents"
     Entity="ua.divas.service.model.Kontragents"/>

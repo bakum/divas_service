@@ -94,6 +94,14 @@ public interface OrdersViewSDO extends java.io.Serializable {
 
    public void setZamerName(java.lang.String value);
 
+   public java.lang.String getZamerUserName();
+
+   public void setZamerUserName(java.lang.String value);
+
+   public java.lang.String getZamerUserId();
+
+   public void setZamerUserId(java.lang.String value);
+
    public java.sql.Timestamp getDatZam();
 
    public void setDatZam(java.sql.Timestamp value);
